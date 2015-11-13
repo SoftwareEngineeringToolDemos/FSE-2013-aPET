@@ -1,4 +1,4 @@
-###Please follow these steps to spin up a virtual machine for Crystal using vagrant script:
+###Please follow these steps to spin up a virtual machine for aPET using vagrant script:
 1. Download and Install [Vagrant](https://www.vagrantup.com/downloads.html) on the host machine.
 2. Download and Install [Virtual Box](https://www.virtualbox.org/wiki/Downloads) on the host machine.
 2. Download the [Vagrantfile](https://github.com/SoftwareEngineeringToolDemos/FSE-2013-aPET/blob/master/build-vm/Vagrantfile) from [build-vm](https://github.com/SoftwareEngineeringToolDemos/FSE-2013-aPET/tree/master/build-vm) directory to your machine.
