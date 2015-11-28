@@ -10,47 +10,43 @@ Vagrant.configure(2) do |config|
 
   vb.memory = "2048"
   
-  vb.name = "FSE-2013-aPET"
+  vb.name = "FSE-2013-aPET1"
 
 end
 
 
 config.vm.provision "shell", inline: <<-SHELL
 
-  add-apt-repository -y ppa:webupd8team/java
-
-  apt-get update
-
-  echo "oracle-java8-installer shared/accepted-oracle-license-v1-1 select true" | sudo debconf-set-selections
-
-  apt-get install -y oracle-java8-installer
-
-  export JAVA_HOME=/usr/lib/jvm/java-8-oracle
-
-  source /etc/environment
+  apt-get update 
 
   cd Desktop
 
-  wget -O "https://eclipse.org/downloads/packages/release/Helios/SR2/eclipse-java-helios-SR2-linux-gtk-x86_64.tar.gz"
+  #wget https://eclipse.org/downloads/packages/release/Helios/SR2/eclipse-java-helios-SR2-linux-gtk-x86_64.tar.gz
 
-  tar zxvf eclipse-java-helios-SR2-linux-gtk-x86_64.tar.gz
+  #tar -zxvf eclipse-java-helios-SR2-linux-gtk-x86_64.tar.gz
 
-  rm eclipse-java-helios-SR2-linux-gtk-x86_64.tar.gz
+  #rm eclipse-java-helios-SR2-linux-gtk-x86_64.tar.gz
    
-  chown -R vagrant: eclipse
+  #chown -R vagrant: eclipse
 
-  sudo chown -R vagrant "/home/vagrant/Desktop"
+  chown -R vagrant "/home/vagrant/Desktop"
   
-  sudo chmod -R a+rwx "/home/vagrant/Desktop"
+  chmod -R a+rwx "/home/vagrant/Desktop"
   
   # Install Adobe Flash Player plugin to view youtube videos
-  sudo apt-get install flashplugin-installer 
+  #apt-get install flashplugin-installer 
+
+  # Add Eclipse as startup application
+  echo "+++++++++++++"
+  mkdir "/home/vagrant/.config/autostart"
+  echo "+++++++++++++"
+  wget -O "/home/vagrant/.config/autostart/eclipse.desktop" https://github.com/SoftwareEngineeringToolDemos/FSE-2013-aPET/blob/master/build-vm/vm-contents/eclipse.desktop
 
   # Disable screen lock
-  sudo mkdir "/home/vagrant/software/scripts"
-  wget -O "/home/vagrant/software/scripts/screenlock.sh" https://github.com/SoftwareEngineeringToolDemos/FSE-2013-aPET/blob/master/build-vm/vm-contents/screenlock.sh
+  mkdir "/home/vagrant/scripts"
+  wget -O "/home/vagrant/scripts/screenlock.sh" https://github.com/SoftwareEngineeringToolDemos/FSE-2013-aPET/blob/master/build-vm/vm-contents/screenlock.sh
   wget -O "/home/vagrant/.config/autostart/screenlock.desktop" https://github.com/SoftwareEngineeringToolDemos/FSE-2013-aPET/blob/master/build-vm/vm-contents/screenlock.desktop
-  sudo chmod -R a+rwx "/home/vagrant/software/scripts/"
+  chmod -R a+rwx "/home/vagrant/scripts/"
   
   # Reboot the VM
   sudo reboot
