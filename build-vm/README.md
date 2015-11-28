@@ -14,7 +14,7 @@
   `Password: vagrant`
 
 ###Acknowledgements:
-Used vagrant virtual box image of [32 bit ubuntu](https://atlas.hashicorp.com/ubuntu/boxes/trusty32).
+Used vagrant virtual box image of [64 bit ubuntu](https://vagrantcloud.com/box-cutter/boxes/ubuntu1404-desktop).
 
 ###References:
 [Vagrant Documentation](https://docs.vagrantup.com/v2/getting-started/)
@@ -23,4 +23,4 @@ Used vagrant virtual box image of [32 bit ubuntu](https://atlas.hashicorp.com/ub
 
 [Tutorial to install java](https://www.digitalocean.com/community/tutorials/how-to-install-java-on-ubuntu-with-apt-get)
 
-[Ubuntu Trusty32 Virtual Box](https://atlas.hashicorp.com/ubuntu/boxes/trusty32)
+[Ubuntu1404-desktop Virtual Box](https://vagrantcloud.com/box-cutter/boxes/ubuntu1404-desktop)
