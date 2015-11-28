@@ -8,7 +8,7 @@ Vagrant.configure(2) do |config|
 
   vb.gui = true  
 
-  vb.memory = "4096"
+  vb.memory = "2048"
   
   vb.name = "FSE-2013-aPET1"
 
