@@ -33,11 +33,19 @@ config.vm.provision "shell", inline: <<-SHELL
 
   cd Desktop
 
+  wget -O apet_workspace.tar.gz https://github.com/SoftwareEngineeringToolDemos/FSE-2013-aPET/raw/master/build-vm/vm-contents/apet_workspace.tar.gz
+
+  tar -xvzf apet_workspace.tar.gz
+
+  rm apet_workspace.tar.gz
+
+
+
   wget -O eclipse.tar.gz https://googledrive.com/host/0B49VkAq-KMteMy1YQUxwODVhTGM/eclipse.tar.gz 
 
   tar -zxvf eclipse.tar.gz
 
-  rm eclipse-java-helios-SR2-linux-gtk-x86_64.tar.gz
+  rm eclipse.tar.gz
  
   ln -s eclipse/eclipse /usr/bin/eclipse
 
@@ -46,8 +54,8 @@ config.vm.provision "shell", inline: <<-SHELL
   echo "Version=4.4" >> /usr/share/applications/eclipse.desktop
   echo "Name=Eclipse" >> /usr/share/applications/eclipse.desktop
   echo "Comment=Integrated Development Environment" >> /usr/share/applications/eclipse.desktop
-  # sudo echo "Exec=/home/vagrant/Desktop/eclipse/eclipse -clean -data /home/vagrant/Desktop/workspace -vm /usr/lib/jvm/java-7-oracle/bin/java" >> /usr/share/applications/eclipse.desktop
-  echo "Exec=/home/vagrant/Desktop/eclipse/eclipse" >> /usr/share/applications/eclipse.desktop 
+  echo "Exec=/home/vagrant/Desktop/eclipse/eclipse -clean -data /home/vagrant/Desktop/apet_workspace" >> /usr/share/applications/eclipse.desktop
+  #echo "Exec=/home/vagrant/Desktop/eclipse/eclipse" >> /usr/share/applications/eclipse.desktop 
   echo "Type=Application" >> /usr/share/applications/eclipse.desktop
   echo "Icon=/opt/eclipse/icon.xpm" >> /usr/share/applications/eclipse.desktop
   echo "Terminal=false" >> /usr/share/applications/eclipse.desktop
