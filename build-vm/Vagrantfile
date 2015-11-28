@@ -109,9 +109,9 @@ config.vm.provision "shell", inline: <<-SHELL
   chmod 777 screenlock.desktop
   
   # Reboot the VM
-  echo "Now going to reboot .......+++++++ $$$$$$$"
+  echo "Now going to reboot .......+++++++ "
   echo "\n\n\n\n\n\n\n"
-  echo "Now going to reboot .......+++++++ $$$$$$$"
+  echo "Now going to reboot .......+++++++ "
 
   #Last Update
   apt-get update
