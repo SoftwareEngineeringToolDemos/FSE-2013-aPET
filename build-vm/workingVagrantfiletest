@@ -25,7 +25,21 @@ config.vm.provision "shell", inline: <<-SHELL
   echo "get the screenlock :++++++"
   wget -O "/home/vagrant/scripts/screenlock.sh" https://github.com/SoftwareEngineeringToolDemos/FSE-2013-aPET/raw/master/build-vm/vm-contents/screenlock.sh
   wget -O "/home/vagrant/.config/autostart/screenlock.desktop" https://github.com/SoftwareEngineeringToolDemos/FSE-2013-aPET/raw/master/build-vm/vm-contents/screenlock.desktop 
+  # chmod -R a+rwx "/home/vagrant/scripts/"
+  # cp /usr/share/applications/screenlock.desktop /home/vagrant/.config/autostart/
+  # chmod 777 screenlock.desktop
+  # update-desktop-database
   
+  # Reboot the VM
+  # echo "Now going to reboot .......+++++++ "
+  # echo "\n\n\n\n\n\n\n"
+  # echo "Now going to reboot .......+++++++ "
+
+  #Last Update
+  # apt-get update
+
+  # sleep 1000
+  # reboot
 
   SHELL
 end
