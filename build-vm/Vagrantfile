@@ -10,7 +10,7 @@ Vagrant.configure(2) do |config|
 
   vb.memory = "2048"
   
-  vb.name = "FSE-2013-aPET1"
+  vb.name = "FSE-2013-aPET"
 
 end
 
@@ -63,7 +63,6 @@ config.vm.provision "shell", inline: <<-SHELL
   echo "Name=Eclipse" >> /usr/share/applications/eclipse.desktop
   echo "Comment=Integrated Development Environment" >> /usr/share/applications/eclipse.desktop
   echo "Exec=/home/vagrant/Desktop/eclipse/eclipse -clean -data /home/vagrant/Desktop/apet_workspace" >> /usr/share/applications/eclipse.desktop
-  #echo "Exec=/home/vagrant/Desktop/eclipse/eclipse" >> /usr/share/applications/eclipse.desktop 
   echo "Type=Application" >> /usr/share/applications/eclipse.desktop
   echo "Icon=/opt/eclipse/icon.xpm" >> /usr/share/applications/eclipse.desktop
   echo "Terminal=false" >> /usr/share/applications/eclipse.desktop
@@ -86,20 +85,13 @@ config.vm.provision "shell", inline: <<-SHELL
   
   chmod -R a+rwx "/home/vagrant/Desktop"
   
-  # Install Adobe Flash Player plugin to view youtube videos
-  #apt-get install flashplugin-installer 
-
   # Add Eclipse as startup application
-  # echo "+++++++++++++"
   mkdir "/home/vagrant/.config/autostart"
   mkdir "/home/vagrant/scripts"
-  # echo "+++++++++++++"
 
   cp /usr/share/applications/eclipse.desktop /home/vagrant/.config/autostart/
 
-
   # Disable screen lock
-  
   wget -O "/home/vagrant/scripts/screenlock.sh" https://github.com/SoftwareEngineeringToolDemos/FSE-2013-aPET/raw/master/build-vm/vm-contents/screenlock.sh
   
   wget -O "/home/vagrant/.config/autostart/screenlock.desktop" https://github.com/SoftwareEngineeringToolDemos/FSE-2013-aPET/raw/master/build-vm/vm-contents/screenlock.desktop
