@@ -59,7 +59,7 @@ config.vm.provision "shell", inline: <<-SHELL
 
   # Create an application launcher for Eclipse (to launch it on startup)
   echo "[Desktop Entry]" >> /usr/share/applications/eclipse.desktop
-  echo "Version=4.4" >> /usr/share/applications/eclipse.desktop
+  echo "Version=3.6.2" >> /usr/share/applications/eclipse.desktop
   echo "Name=Eclipse" >> /usr/share/applications/eclipse.desktop
   echo "Comment=Integrated Development Environment" >> /usr/share/applications/eclipse.desktop
   echo "Exec=/home/vagrant/Desktop/eclipse/eclipse -clean -data /home/vagrant/Desktop/apet_workspace" >> /usr/share/applications/eclipse.desktop
