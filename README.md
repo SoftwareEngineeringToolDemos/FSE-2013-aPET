@@ -14,9 +14,8 @@ This repository _is not_ the original repository for this tool. Here are some li
 In this repository, for aPET, you will find:
 
 * :x: Source code (not available)
-* :white_check_mark: [Binaries](Binaries) (available)
 * :white_check_mark: [The original tool](Binaries) (available)
-* :white_check_mark: [Virtual machine containing tool](http://go.ncsu.edu/SE-tool-VMs)
+* :x: Virtual machine containing tool (not available)
 
 This repository was constructed by [Manish Singh](https://github.com/manish211) under the supervision of [Emerson Murphy-Hill](https://github.com/CaptainEmerson)
 
